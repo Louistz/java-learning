@@ -16,17 +16,14 @@ import java.nio.channels.FileChannel;
 public class ChannelSample {
 
     public static void main(String[] args) {
-
-
-
-
+        testChannel();
     }
 
 
     public static void testChannel(){
         RandomAccessFile accessFile = null;
         try {
-            accessFile = new RandomAccessFile("words.txt","rw");
+            accessFile = new  RandomAccessFile("src/main/resources/words.txt","rw");
             FileChannel fileChannel = accessFile.getChannel();
             ByteBuffer buf = ByteBuffer.allocate(48);
 
