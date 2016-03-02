@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class ObjectStructure {
 
-    private List<Node> nodes = new ArrayList<>();
+    private List<Node> nodes = new ArrayList<Node>();
 
     public void action(Visitor v){
         for(Node n : nodes){

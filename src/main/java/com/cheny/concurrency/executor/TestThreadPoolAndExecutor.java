@@ -20,9 +20,8 @@ public class TestThreadPoolAndExecutor {
 
     public static void testExecutors() throws Exception{
         ExecutorService es = Executors.newFixedThreadPool(5);
-        List<Future> fl = new ArrayList<>();
+        List<Future> fl = new ArrayList<Future>();
         es.execute(new Runnable() {
-            @Override
             public void run() {
 
                 System.out.println("hello");
@@ -35,7 +34,6 @@ public class TestThreadPoolAndExecutor {
          * 如果异常不捕获而抛出的话，会中断线程的执行，导致其他任务也执行不下去。
          */
         fl.add(es.submit(new Runnable() {
-            @Override
             public void run() {
                 try{
                 throw new IllegalArgumentException("error 2");
@@ -45,7 +43,6 @@ public class TestThreadPoolAndExecutor {
             }
         }));
         fl.add(es.submit(new Callable<String>() {
-            @Override
             public String call() throws Exception {
                 return "hello 3";
             }
@@ -60,14 +57,12 @@ public class TestThreadPoolAndExecutor {
 
         ScheduledExecutorService ses = Executors.newScheduledThreadPool(5,Executors.defaultThreadFactory());
         ses.scheduleAtFixedRate(new Runnable() {
-            @Override
             public void run() {
                 System.out.println("Hello Sweety");
             }
         },1000L,1000L,TimeUnit.MILLISECONDS);
 
         ses.scheduleWithFixedDelay(new Runnable() {
-            @Override
             public void run() {
                 System.out.println("Honey");
             }
@@ -84,7 +79,6 @@ public class TestThreadPoolAndExecutor {
         CompletionService<Integer> cs = new ExecutorCompletionService<Integer>(es);
 
         Callable<Integer> task = new Callable<Integer>() {
-            @Override
             public Integer call() throws Exception {
                 return Math.round(System.currentTimeMillis()/100000000);
             }

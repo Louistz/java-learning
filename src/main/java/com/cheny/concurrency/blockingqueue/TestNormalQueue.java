@@ -16,7 +16,7 @@ public class TestNormalQueue {
     public static void main(String[] args){
 
 
-        Queue<String> queue = new LinkedList<>();
+        Queue<String> queue = new LinkedList<String>();
         queue.add("a");
         queue.add("b");
         queue.add("c");

@@ -24,8 +24,8 @@ public class FolderProcessor extends RecursiveTask<List<String>> {
 
     @Override
     protected List<String> compute() {
-        List<String> list = new ArrayList<>();
-        List<FolderProcessor> tasks = new ArrayList<>();
+        List<String> list = new ArrayList<String>();
+        List<FolderProcessor> tasks = new ArrayList<FolderProcessor>();
         File file = new File(path);
         File content[] = file.listFiles();
 

@@ -52,37 +52,37 @@ public class TestThread {
             threads[i].setName("Thread"+i);
         }
 
-        try(FileWriter log = new FileWriter("log.txt");
-            PrintWriter pw = new PrintWriter(log);){
-
-            for (int i=0; i<10; i++){
-                pw.println("Main : Status of Thread "+i+" : " +threads[i].getState());
-                states[i]=threads[i].getState();
-            }
-
-            for(int i=0;i<10;i++){
-                threads[i].start();
-            }
-
-            boolean finish = false;
-            while(!finish){
-                for(int i=0;i<10;i++){
-                    if(threads[i].getState() != states[i]){
-                        writeThreadInfo(pw,threads[i],threads[i].getState());
-                        states[i] = threads[i].getState();
-                    }
-                }
-                finish = true;
-                for (int i=0; i<10; i++){
-                    finish=finish && (threads[i].getState()==Thread.State.TERMINATED);
-                }
-            }
-
-            if(finish){
-                System.out.println("Done");
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        try(FileWriter log = new FileWriter("log.txt");
+//            PrintWriter pw = new PrintWriter(log);){
+//
+//            for (int i=0; i<10; i++){
+//                pw.println("Main : Status of Thread "+i+" : " +threads[i].getState());
+//                states[i]=threads[i].getState();
+//            }
+//
+//            for(int i=0;i<10;i++){
+//                threads[i].start();
+//            }
+//
+//            boolean finish = false;
+//            while(!finish){
+//                for(int i=0;i<10;i++){
+//                    if(threads[i].getState() != states[i]){
+//                        writeThreadInfo(pw,threads[i],threads[i].getState());
+//                        states[i] = threads[i].getState();
+//                    }
+//                }
+//                finish = true;
+//                for (int i=0; i<10; i++){
+//                    finish=finish && (threads[i].getState()==Thread.State.TERMINATED);
+//                }
+//            }
+//
+//            if(finish){
+//                System.out.println("Done");
+//            }
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
     }
 }

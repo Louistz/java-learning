@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Composite extends Component {
 
-    private List<Component> components = new ArrayList<>();
+    private List<Component> components = new ArrayList<Component>();
 
     @Override
     public void add(Component component) {
