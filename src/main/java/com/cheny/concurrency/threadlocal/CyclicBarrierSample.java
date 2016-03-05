@@ -13,7 +13,6 @@ import java.util.concurrent.CyclicBarrier;
 public class CyclicBarrierSample {
 
     public class TotalTask implements Runnable{
-        @Override
         public void run() {
             doSomething();
         }
