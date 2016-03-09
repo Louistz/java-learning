@@ -14,7 +14,6 @@ public class Adapter implements Target{
     public Adapter(Adaptee adaptee){
         this.adaptee = adaptee;
     }
-
     @Override
     public void request() {
         System.out.println("i am adapting,");
