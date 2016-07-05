@@ -1,4 +1,4 @@
-package com.cheny.algorithm.search;
+package com.cheny.algorithm.sort;
 
 /**
  * <p>描述</p>

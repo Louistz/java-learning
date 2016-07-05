@@ -1,4 +1,4 @@
-package com.cheny.algorithm.search;
+package com.cheny.algorithm.sort;
 
 import java.util.Random;
 
