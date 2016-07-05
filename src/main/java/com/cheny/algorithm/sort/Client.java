@@ -15,7 +15,7 @@ public class Client {
 
         final int N = 20;
 
-        AbstractSort search = new ShellSort();
+        AbstractSort search = new OptimizationMergeSort();
         Integer[] a = new Integer[N];
         Random random = new Random();
         for(int i=0;i<a.length;i++) {
