@@ -39,11 +39,5 @@ public class MergeSort extends AbstractSort {
                 a[k] = tmp[j++];
             }
         }
-
-
-
-
-
-
     }
 }
