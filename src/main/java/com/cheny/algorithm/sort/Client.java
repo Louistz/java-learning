@@ -15,11 +15,11 @@ public class Client {
 
         final int N = 20;
 
-        AbstractSort search = new Quick3WaySort();
+        AbstractSort search = new HeapSort();
         Integer[] a = new Integer[N];
         Random random = new Random();
         for(int i=0;i<a.length;i++) {
-            a[i] = random.nextInt(10) + 1;
+            a[i] = random.nextInt(100) + 1;
         }
         search.show(a);
 
