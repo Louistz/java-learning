@@ -3,6 +3,8 @@ package com.cheny.algorithm.sort;
 /**
  * <p>堆排序</p>
  *
+ * 优先级队列的父节点元素总是大于(小于)左右子节点
+ *
  * @author of1610 chenyong
  * @version 1.0
  * @since 1.0
@@ -31,7 +33,7 @@ public class HeapSort extends AbstractSort {
     }
 
     /**
-     * 二叉堆
+     * 二叉堆,优先级队列
      * @param <T>
      */
     private class MaxPQ<T extends Comparable> {
