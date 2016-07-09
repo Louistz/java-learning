@@ -1,6 +1,8 @@
 package com.cheny.algorithm.search;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * <p>二叉查找树(BST)</p>
@@ -31,7 +33,7 @@ public class BST<K extends Comparable,V> implements ST<K,V> {
         }else{
             node.value = v;
         }
-        node.n = node.left.n + node.right.n + 1;
+        node.n = size(node.left) + size(node.right) + 1;
         return node;
     }
 
@@ -52,6 +54,57 @@ public class BST<K extends Comparable,V> implements ST<K,V> {
         }else{
             return node.value;
         }
+    }
+
+    public K minK(){
+        Node minKNode = minKNode(root);
+        if(null == minKNode){
+            return null;
+        }else{
+            return minKNode.key;
+        }
+    }
+
+    private Node minKNode(Node node){
+        if(null == node){
+            return null;
+        }else if( null == node.left){
+            return node;
+        }else{
+            return minKNode(node.left);
+        }
+    }
+
+    public K select(int k){
+        Node n = select(root, k);
+        return null == n ? null : n.key;
+    }
+
+    //返回排名为k的节点
+    public Node select(Node node ,int k){
+        if(node == null){
+            return null;
+        }
+        int kcmp = size(node.left);
+        if(k < kcmp){
+            return select(node.left,k);
+        }else if(k>0){
+            return select(node.right,k-kcmp-1);
+        }else{
+            return node;
+        }
+    }
+
+    public void delMin(){
+        root =delMin(root);
+    }
+    public Node delMin(Node node){
+        if(node.left == null){
+            return node.right;
+        }
+        node.left = delMin(node.left);
+        node.n = size(node.left) + size(node.right) + 1;
+        return node;
     }
 
     @Override
@@ -75,26 +128,78 @@ public class BST<K extends Comparable,V> implements ST<K,V> {
 
     @Override
     public void delete(K k) {
-
+        root = delete(root,k);
     }
 
-    private void delete(Node node , K key){
+
+    private Node delete(Node node , K key){
         if(node == null){
-            return;
+            return null;
         }
         int cmp = key.compareTo(node.key);
         if(cmp < 0){
-            delete(node.left,key);
+            node.left = delete(node.left,key);
         }else if(cmp > 0){
-            delete(node.right, key);
+            node.right = delete(node.right, key);
         }else{
-            node = node.left;
+
+            //将要被删除的节点如果只有一个左节点或者右节点,返回左或者右节点即可
+            if(null == node.left) return node.right;
+            if(null == node.right) return node.left;
+
+            //有两个子节点的话, 在右子树中找到最小的那个节点,将其和被删除节点互换,
+            // 被删除节点即是这棵右子树的最小节点了,删除右子树的这个最小节点即可.
+            Node tmp = node;
+            node = min(tmp.right);
+            node.left = tmp .left;
+            node.right = delMin(node.left);
+        }
+        //重新计算n值
+        node.n = size(node.left) + size(node.right) + 1;
+        return node;
+    }
+
+    private Node min(Node node){
+        if(null == node){
+            return null;
+        }
+        if(node.left == null){
+            return node;
+        }else{
+            return min(node.left);
         }
     }
 
     @Override
     public Iterator<K> keys() {
-        return null;
+        return new Iterator<K>() {
+
+            private int index = 0;
+            private List<K> ks = new ArrayList<>(root.n);
+            {
+                add2List(ks,root);
+            }
+
+            @Override
+            public boolean hasNext() {
+                return index<ks.size();
+            }
+
+            @Override
+            public K next() {
+                return ks.get(index++);
+            }
+
+            //将二叉节点的key从小到大放到list中
+            private void add2List(List<K> list, Node node){
+                if(null == node){
+                    return;
+                }
+                add2List(list,node.left);
+                list.add(node.key);
+                add2List(list,node.right);
+            }
+        };
     }
 
     @Override
@@ -104,14 +209,12 @@ public class BST<K extends Comparable,V> implements ST<K,V> {
 
     @Override
     public int size() {
-        if(null == root){
-            return 0;
-        }else{
-            return root.n;
-        }
+        return size(root);
     }
 
-
+    private int size(Node node){
+        return null == node ? 0 : node.n ;
+    }
 
     private class Node{
 

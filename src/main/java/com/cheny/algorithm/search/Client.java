@@ -13,7 +13,7 @@ import java.util.Iterator;
 public class Client {
 
     public static void main(String[] args) {
-        ST st = new SequentialSearchST<String,Integer>();
+        ST st = new BST<>();
 
         st.put("A", 1);
         st.put("B", 2);
