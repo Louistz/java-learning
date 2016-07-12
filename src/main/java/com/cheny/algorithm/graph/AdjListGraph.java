@@ -30,7 +30,7 @@ public class AdjListGraph implements Graph{
 
     public AdjListGraph(In in){
         this(in.readInt());
-        this.edge = in.readInt();
+        int edge = in.readInt();
         for(int i=0;i<edge;i++){
             int v = in.readInt();
             int w = in.readInt();

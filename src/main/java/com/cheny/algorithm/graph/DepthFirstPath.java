@@ -1,5 +1,7 @@
 package com.cheny.algorithm.graph;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -18,8 +20,11 @@ public class DepthFirstPath {
     public DepthFirstPath(Graph G , int start){
         marked = new boolean[G.V()];
         edgeTo = new int[G.V()];
+        for(int i=0;i<edgeTo.length;i++){
+            edgeTo[i] = -1;
+        }
         this.start = start;
-
+        dfs(G,this.start);
     }
 
     private void dfs(Graph G ,int start){
@@ -45,7 +50,12 @@ public class DepthFirstPath {
             path.push(i);
         }
         path.push(start);
-        return path;
+
+        List<Integer> list = new ArrayList<>();
+        while (!path.isEmpty()){
+            list.add(path.pop());
+        }
+        return list;
     }
 
 }
