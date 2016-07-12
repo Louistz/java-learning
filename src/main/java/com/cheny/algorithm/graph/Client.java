@@ -3,6 +3,8 @@ package com.cheny.algorithm.graph;
 import edu.princeton.cs.introcs.In;
 import edu.princeton.cs.introcs.StdOut;
 
+import java.io.File;
+
 /**
  * <p>描述</p>
  *
@@ -13,8 +15,9 @@ import edu.princeton.cs.introcs.StdOut;
 public class Client {
 
     public static void main(String[] args) {
-        Graph G = new AdjListGraph(new In("/Users/chenyong/wkspace/TDA/java-learning/src/main/java/com/cheny/algorithm/graph/tinyG.txt"));
-        int s = 9;
+        File file = new File("src/main/resources/tinyG.txt");
+        Graph G = new AdjListGraph(new In(file));
+        int s = 10;
         DepthFirstPath path = new DepthFirstPath(G,s);
         for(int v = 0; v < G.V();v++){
             StdOut.print(s+" to " + v + ": ");
