@@ -17,8 +17,8 @@ public class Client {
     public static void main(String[] args) {
         File file = new File("src/main/resources/tinyG.txt");
         Graph G = new AdjListGraph(new In(file));
-        int s = 10;
-        DepthFirstPath path = new DepthFirstPath(G,s);
+        int s = 0;
+        BreadthFirstPath path = new BreadthFirstPath(G,s);
         for(int v = 0; v < G.V();v++){
             StdOut.print(s+" to " + v + ": ");
             if(path.hasPathTo(v)){
