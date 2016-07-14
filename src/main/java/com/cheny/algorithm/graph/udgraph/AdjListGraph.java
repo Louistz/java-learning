@@ -1,4 +1,4 @@
-package com.cheny.algorithm.graph;
+package com.cheny.algorithm.graph.udgraph;
 
 import edu.princeton.cs.introcs.*;
 

@@ -1,4 +1,4 @@
-package com.cheny.algorithm.graph;
+package com.cheny.algorithm.graph.udgraph;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.cheny.algorithm.graph;
+package com.cheny.algorithm.graph.udgraph;
 
 /**
  * <p>描述</p>
