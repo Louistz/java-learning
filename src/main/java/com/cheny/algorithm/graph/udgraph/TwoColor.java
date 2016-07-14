@@ -1,6 +1,6 @@
 package com.cheny.algorithm.graph.udgraph;
 
-import com.cheny.algorithm.graph.udgraph.Graph;
+import com.cheny.algorithm.graph.Graph;
 
 /**
  * <p>描述</p>

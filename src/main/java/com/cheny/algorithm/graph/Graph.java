@@ -1,4 +1,4 @@
-package com.cheny.algorithm.graph.udgraph;
+package com.cheny.algorithm.graph;
 
 import com.cheny.gof.iterator.Iterator;
 

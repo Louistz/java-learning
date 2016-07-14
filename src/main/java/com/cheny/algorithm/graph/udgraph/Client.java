@@ -1,5 +1,6 @@
 package com.cheny.algorithm.graph.udgraph;
 
+import com.cheny.algorithm.graph.Graph;
 import edu.princeton.cs.introcs.In;
 import edu.princeton.cs.introcs.StdOut;
 

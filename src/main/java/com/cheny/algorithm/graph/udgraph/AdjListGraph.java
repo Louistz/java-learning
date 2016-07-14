@@ -1,5 +1,6 @@
 package com.cheny.algorithm.graph.udgraph;
 
+import com.cheny.algorithm.graph.Graph;
 import edu.princeton.cs.introcs.*;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.List;
  * @version 1.0
  * @since 1.0
  */
-public class AdjListGraph implements Graph{
+public class AdjListGraph implements Graph {
 
     private int edge;
     private int vertex;

@@ -1,5 +1,7 @@
 package com.cheny.algorithm.graph.udgraph;
 
+import com.cheny.algorithm.graph.Graph;
+
 /**
  * <p>连通分量</p>
  *
