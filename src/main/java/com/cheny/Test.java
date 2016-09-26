@@ -1,5 +1,7 @@
 package com.cheny;
 
+import java.net.InetAddress;
+
 /**
  * <p>描述</p>
  *
@@ -20,8 +22,13 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        String fullClassName = "com.qianmi.pc.api.ms.doc.impl.MsApiDocQueryProviderImpl";
-        String className = fullClassName.substring(fullClassName.lastIndexOf(".")+1,fullClassName.length()-4);
-        System.out.println(className);
+        try{
+            InetAddress addr = InetAddress.getByName("www.baidu.com");
+            System.out.println(addr);
+        }catch (Exception e){
+
+        }
+
+
     }
 }
