@@ -10,9 +10,15 @@ import lombok.Setter;
  * @version 1.0
  * @since 1.0
  */
-@Getter
-@Setter
 public class Owner extends User {
 
     private Address currentGPS;
+
+    public Address getCurrentGPS() {
+        return currentGPS;
+    }
+
+    public void setCurrentGPS(Address currentGPS) {
+        this.currentGPS = currentGPS;
+    }
 }

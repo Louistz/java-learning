@@ -9,4 +9,12 @@ package com.cheny.ddd.domain.model;
  */
 public class Shipper extends User {
     private Address currentGPS;
+
+    public Address getCurrentGPS() {
+        return currentGPS;
+    }
+
+    public void setCurrentGPS(Address currentGPS) {
+        this.currentGPS = currentGPS;
+    }
 }
