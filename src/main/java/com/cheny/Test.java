@@ -25,6 +25,10 @@ public class Test {
         try{
             InetAddress addr = InetAddress.getByName("www.baidu.com");
             System.out.println(addr);
+            long a = 1000_000_1000l;
+            int b = 1_1;
+            System.out.println(a);
+            System.out.println(b);
         }catch (Exception e){
 
         }
