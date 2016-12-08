@@ -19,7 +19,7 @@ public class Client {
     public static void main(String[] args) {
 
         // read the n points from a file
-        In in = new In(new File("src/main/resources/algs4/collinear/input8.txt"));
+        In in = new In(new File("src/main/resources/algs4/collinear/rs1423.txt"));
         int n = in.readInt();
         Point[] points = new Point[n];
         for (int i = 0; i < n; i++) {
