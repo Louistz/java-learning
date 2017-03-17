@@ -27,8 +27,6 @@ public class App {
 
 
     public static void test(){
-        Test t = new Test();
-        t.test();
     }
 
     public static  void ddd(){
