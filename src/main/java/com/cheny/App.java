@@ -1,6 +1,7 @@
 package com.cheny;
 
 
+import org.apache.axis.AxisFault;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -23,6 +24,8 @@ import javax.net.ssl.X509TrustManager;
 public class App {
     public static void main(String[] args) {
         ddd();
+
+        AxisFault s = new AxisFault();
     }
 
 
