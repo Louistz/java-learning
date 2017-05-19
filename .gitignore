@@ -10,3 +10,20 @@ out
 gen
 log.txt
 # Created by .ignore support plugin (hsz.mobi)
+
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+build/Release
+
+# Dependency directories
+node_modules/
+# Optional npm cache directory
+.npm
