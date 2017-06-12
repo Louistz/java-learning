@@ -38,7 +38,7 @@ public class HelloController {
         return mv;
     }
 
-    //动态user, 返回json .通常用户ajax
+    //动态url, 返回json .通常用于ajax
     @RequestMapping(value = "/index/{userId}",method = RequestMethod.GET)
     @ResponseBody
     public Map<String,Object> getUser(@PathVariable String userId){
