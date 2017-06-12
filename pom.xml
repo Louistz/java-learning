@@ -35,6 +35,8 @@
         <jedis-version>2.7.3</jedis-version>
         <lombok.version>1.16.4</lombok.version>
 
+        <spring.version>4.3.8.RELEASE</spring.version>
+
     </properties>
 
     <repositories>
@@ -192,6 +194,13 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>3.16</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
         </dependency>
 
 
