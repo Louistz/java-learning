@@ -61,6 +61,8 @@ public class ReflectTest {
         System.out.println(field.get(rt));
 
         method.setAccessible(true);
+
+        System.out.println("'" + "a" + "'");
        // method.invoke(null,(Object)new String[]{});
 
     }
