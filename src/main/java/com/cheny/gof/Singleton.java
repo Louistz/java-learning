@@ -17,9 +17,4 @@ public class Singleton {
     public Singleton getInstance(){
         return SingletonHolder.INSTANCE;
     }
-
-    //枚举单例
-    public enum Singleton2{
-        INSTANCE;
-    }
 }

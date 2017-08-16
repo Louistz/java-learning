@@ -1,0 +1,4 @@
+com.cheny.zip.extract.GzipExtractor
+com.cheny.zip.extract.TarGzipExtractor
+com.cheny.zip.extract.ZipExtractor
+com.cheny.zip.extract.RarExtractor
